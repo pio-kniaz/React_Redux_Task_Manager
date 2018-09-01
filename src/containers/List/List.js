@@ -4,13 +4,13 @@ import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import "./List.css";
-import { getTasks, deleteTask } from "../../actions/taskActions";
+import { getTasks, deleteTask,doneTask} from "../../actions/taskActions";
 class List extends React.Component {
   componentDidMount() {
     this.props.getTasks();
   }
   render() {
-    const { tasks, deleteTask } = this.props;
+    const { tasks, deleteTask,doneTask } = this.props;
     let renderTask = null;
     if (tasks) {
       renderTask = tasks.map((elem, index) => {
@@ -39,7 +39,7 @@ class List extends React.Component {
             key={index}
             className="row d-flex justify-content-between align-items-center List__wrapper"
           >
-            <div style={style} className="List__Box list-group-item col-sm-10">
+            <div  onClick={doneTask.bind(this,elem.id)} style={style} className="List__Box list-group-item col-sm-10">
               <NavLink
                 className="List__Title"
                 style={style}
@@ -88,5 +88,5 @@ const mapStateToProps = state => {
 // });
 export default connect(
   mapStateToProps,
-  { getTasks, deleteTask }
+  { getTasks, deleteTask ,doneTask}
 )(List);

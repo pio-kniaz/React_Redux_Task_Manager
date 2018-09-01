@@ -1,4 +1,4 @@
-import { GET_TASKS,DELETE_TASK,ADD_TASK } from "./types";
+import { GET_TASKS,DELETE_TASK,ADD_TASK,DONE_TASK } from "./types";
 export const getTasks=()=>{
 	return{
 		type:GET_TASKS
@@ -12,5 +12,11 @@ export const deleteTask=(id)=>{
 export const addTask=(newTask)=>{
 	return{
 		type:ADD_TASK,payload:newTask
+	}
+}
+
+export const doneTask=(taskId)=>{
+	return{
+		type:DONE_TASK,payload:taskId
 	}
 }
