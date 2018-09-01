@@ -1,15 +1,16 @@
 import React from "react";
-import Form from "../../components/Form/Form"
+import Form from "../../components/Form/Form";
+import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import "./List.css";
-import {getTasks,deleteTask} from "../../actions/taskActions"
+import { getTasks, deleteTask } from "../../actions/taskActions";
 class List extends React.Component {
   componentDidMount() {
     this.props.getTasks();
   }
   render() {
-    const { tasks,deleteTask } = this.props;
+    const { tasks, deleteTask } = this.props;
     let renderTask = null;
     if (tasks) {
       renderTask = tasks.map((elem, index) => {
@@ -39,16 +40,21 @@ class List extends React.Component {
             className="row d-flex justify-content-between align-items-center List__wrapper"
           >
             <div style={style} className="List__Box list-group-item col-sm-10">
-              <a className="List__Title" style={style} to={`/test/${elem.id}`}>
+              <NavLink
+                className="List__Title"
+                style={style}
+                to={`/test/${elem.id}`}
+              >
                 {elem.category}
-              </a>
+              </NavLink>
 
               <span className="List__date">{transformedDate}</span>
             </div>
             <div className="col-sm-2">
               <span
-								onClick={deleteTask.bind(this, elem.id)}
-								className="badge badge-primary badge-pill List__delete list-group-item">
+                onClick={deleteTask.bind(this, elem.id)}
+                className="badge badge-primary badge-pill List__delete list-group-item"
+              >
                 Delete
               </span>
             </div>
@@ -56,15 +62,18 @@ class List extends React.Component {
         );
       });
     }
-    return <div className="List list-group List">{renderTask}
-		<Form/>
-		</div>;
+    return (
+      <div className="List list-group List">
+        {renderTask}
+        <Form />
+      </div>
+    );
   }
 }
 List.propTypes = {
   tasks: PropTypes.array.isRequired,
   getTasks: PropTypes.func.isRequired,
-	deleteTask:PropTypes.func.isRequired
+  deleteTask: PropTypes.func.isRequired
 };
 const mapStateToProps = state => {
   return {
@@ -79,5 +88,5 @@ const mapStateToProps = state => {
 // });
 export default connect(
   mapStateToProps,
-  {getTasks,deleteTask}
+  { getTasks, deleteTask }
 )(List);
