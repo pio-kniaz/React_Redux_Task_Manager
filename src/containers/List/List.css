@@ -1,0 +1,30 @@
+.List {
+  max-width: 600px;
+  margin: auto;
+}
+
+.List__btn {
+  margin-top: 25px;
+}
+.List__Box {
+  display: flex;
+}
+.List__Title {
+  width: auto;
+  text-align: left;
+}
+.List__date {
+  flex: 1;
+  text-align: right;
+}
+.List__delete {
+  background-color: #fff;
+  text-align: center;
+	color: black;
+	transition: all .2s linear;
+
+}
+.List__delete:hover {
+	transition: all .5s linear;
+	background-color: #ff5a5a;
+}
