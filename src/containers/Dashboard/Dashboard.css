@@ -1,0 +1,54 @@
+.Dashboard {
+  max-width: 100%;
+  margin: auto;
+}
+.List__time{
+	width: 100%;
+	padding-bottom: 12px;
+}
+.card-footer{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.card{
+	transition: all 0.2s linear;
+	perspective: 1000px;
+
+}
+.done{
+	opacity: 0.5;
+	transition: all 0.2s linear;
+	transform: rotateY(180deg);
+	background-color: black;
+	visibility: visible;
+	z-index: -1;
+}
+.backSide{
+	display: none;
+	opacity: 0;
+	visibility: hidden;
+}
+.back-button{
+	display: none;
+}
+.back-button.active{
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.btn-bg{
+	background: #28a745;
+	color: white;
+}
+.btn-bg:hover{
+	background: #ffecc0;
+}
+.btn-bg:hover{
+	color: #28a745;
+}
+.fa-check{
+	font-size: 10vw;
+}

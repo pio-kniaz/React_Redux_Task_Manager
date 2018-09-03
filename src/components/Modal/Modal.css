@@ -1,0 +1,14 @@
+.Modal{
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 40%;
+	transform: translate(0,-50%);
+}
+.Modal__btn{
+	margin: auto;
+	text-align: center;
+	display: block;
+	width: 100%;
+	margin-top: 15px;
+}

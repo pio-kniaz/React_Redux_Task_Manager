@@ -1,4 +1,4 @@
-import { GET_TASKS, DELETE_TASK, ADD_TASK, DONE_TASK } from "./types";
+import { GET_TASKS, DELETE_TASK, ADD_TASK, DONE_TASK,MODAL_VISIBLE } from "./types";
 import axios from "axios";
 export const getTasks = () => async dispatch => {
   const res = await axios.get(
@@ -21,7 +21,7 @@ export const deleteTask = id => {
 };
 
 export const addTask = newTask => async dispatch=>{
-	const post = await axios.post('https://contact-702be.firebaseio.com/Tasks.json',newTask)
+	await axios.post('https://contact-702be.firebaseio.com/Tasks.json',newTask)
   dispatch ({
     type: ADD_TASK,
     payload: newTask
