@@ -66,7 +66,7 @@ class Dashboard extends React.Component {
                   type="button"
                   className="btn btn-outline-danger"
                 >
-                  Danger
+                  Delete
                 </button>
                 <button
                   onClick={doneTask.bind(this, elem.id)}
@@ -94,7 +94,6 @@ class Dashboard extends React.Component {
       <div className="Dashboard row">
         {renderTask}
 				<Modal/>
-        {/* <Form /> */}
       </div>
     );
   }

@@ -2,7 +2,7 @@ import React from "react";
 import "./Modal.css";
 import { connect } from "react-redux";
 import { modalHandler } from "../../actions/modalActions";
-
+import Form from "../Form/Form"
 const Modal = props => {
   const modal = (
     <div className="Modal">
@@ -21,20 +21,9 @@ const Modal = props => {
             </button>
           </div>
           <div className="modal-body">
-            <p>Modal body text goes here.</p>
+           	<Form/>
           </div>
           <div className="modal-footer">
-            <button type="button" className="btn btn-primary">
-              Save changes
-            </button>
-            <button
-              type="button"
-              className="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Close
-              {props.modal + ""}
-            </button>
           </div>
         </div>
       </div>

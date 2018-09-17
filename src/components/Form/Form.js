@@ -32,18 +32,17 @@ class Form extends React.Component {
   render() {
     const { addTask } = this.props;
     return (
-      <div>
+      <form>
 				<input value={this.state.category} name="category" onChange={this.inputValueHandler} type="text"/>
 				<input value={this.state.description} name="description" onChange={this.inputValueHandler} type="text"/>
-        <button
-          // onClick={()=>addTask(this.state.category,this.state.description)}
+				<button
 					onClick={this.onSubmit}
-          type="button"
-          className="btn btn-success List__btn"
-        >
-          Add Task
-        </button>
-      </div>
+					type="button"
+					className="btn btn-success Submit__btn"
+				>
+					Add Task
+				</button>
+      </form>
     );
   }
 }
